@@ -8,129 +8,71 @@
   <title>Photo Album</title>
   
   <style>
-    /* The grid: Four equal columns that floats next to each other */
+    .row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
 .column {
-  float: left;
-  width: 25%;
-  padding: 10px;
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
 }
 
-/* Style the images inside the grid */
 .column img {
-  opacity: 0.8;
-  cursor: pointer;
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
 }
 
-.column img:hover {
-  opacity: 1;
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* The expanding image container (positioning is needed to position the close button and the text) */
-.container {
-  position: relative;
-  display: none;
-}
-
-/* Expanding image text */
-#imgtext {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  color: white;
-  font-size: 20px;
-}
-
-/* Closable button inside the image */
-.closebtn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  color: white;
-  font-size: 35px;
-  cursor: pointer;
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
 }
   </style>
 
 </head>
 
 <body >
-  <!-- The grid: four columns -->
-<div class="row">
+  <div class="row">
   <div class="column">
-    <img src="https://somchaithumariya.github.io/photo/1.png" alt="1" onclick="myFunction(this);">
+    <img src="https://somchaithumariya.github.io/photo/1.png">
+    <img src="https://somchaithumariya.github.io/photo/2.png">
+    <img src="https://somchaithumariya.github.io/photo/3.png">    
   </div>
   <div class="column">
-    <img src="https://somchaithumariya.github.io/photo/2.png" alt="2" onclick="myFunction(this);">
+    <img src="https://somchaithumariya.github.io/photo/4.png">
+    <img src="https://somchaithumariya.github.io/photo/5.png">
+    <img src="https://somchaithumariya.github.io/photo/6.png">    
   </div>
   <div class="column">
-    <img src="https://somchaithumariya.github.io/photo/3.png" alt="3" onclick="myFunction(this);">
+    <img src="https://somchaithumariya.github.io/photo/7.png">
+    <img src="https://somchaithumariya.github.io/photo/8.png">
+    <img src="https://somchaithumariya.github.io/photo/9.png">    
   </div>
   <div class="column">
-    <img src="https://somchaithumariya.github.io/photo/4.png" alt="4" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://somchaithumariya.github.io/photo/5.png" alt="5" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://somchaithumariya.github.io/photo/6.png" alt="6" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://somchaithumariya.github.io/photo/7.png" alt="7" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://somchaithumariya.github.io/photo/8.png" alt="8" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://somchaithumariya.github.io/photo/9.png" alt="9" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://somchaithumariya.github.io/photo/10.png" alt="10" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://somchaithumariya.github.io/photo/11.png" alt="11" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://somchaithumariya.github.io/photo/12.png" alt="12" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="https://somchaithumariya.github.io/photo/13.png" alt="13" onclick="myFunction(this);">
+    <img src="https://somchaithumariya.github.io/photo/10.png">
+    <img src="https://somchaithumariya.github.io/photo/11.png">
+    <img src="https://somchaithumariya.github.io/photo/12.png">
+    <img src="https://somchaithumariya.github.io/photo/13.png">    
   </div>
 </div>
-
-<!-- The expanding image container -->
-<div class="container">
-  <!-- Close the image -->
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-
-  <!-- Expanded image -->
-  <img id="expandedImg" style="width:100%">
-
-  <!-- Image text -->
-  <div id="imgtext"></div>
-</div>
-
-
-
+  
 <script>
-     function myFunction(imgs) {
-  // Get the expanded image
-  var expandImg = document.getElementById("expandedImg");
-  // Get the image text
-  var imgText = document.getElementById("imgtext");
-  // Use the same src in the expanded image as the image being clicked on from the grid
-  expandImg.src = imgs.src;
-  // Use the value of the alt attribute of the clickable image as text inside the expanded image
-  imgText.innerHTML = imgs.alt;
-  // Show the container element (hidden with CSS)
-  expandImg.parentElement.style.display = "block";
-}
+
 </script>
 
 </body>
